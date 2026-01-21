@@ -1,0 +1,22 @@
+[
+  {
+    "q": "¿Cuál es el paradigma económico que se caracteriza por su falta de consideración hacia el reciclaje y la reutilización?",
+    "options": [
+      "Modelo de Negocio Circular",
+      "Economía Circular",
+      "Economía Sostenible",
+      "Modelo de Economía Lineal"
+    ],
+    "answer": 3
+  },
+  {
+    "q": "¿Qué porcentaje aproximado del impacto ambiental de un producto se determina durante la fase de diseño?",
+    "options": [
+      "Menos del 50%",
+      "El 60%",
+      "Más del 80%",
+      "La totalidad del impacto"
+    ],
+    "answer": 2
+  }
+]
