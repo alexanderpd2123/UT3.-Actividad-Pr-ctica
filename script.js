@@ -7,8 +7,7 @@ const weatherResult = document.getElementById('weather-result');
 const weatherContainer = document.querySelector('.weather-container'); 
 
 function consumirMiAPI() {
-    // Reemplaza esta URL por la que te dé Render después de desplegar
-    fetch('https://tu-proyecto.onrender.com/api/questions') 
+    fetch(' https://ut3-actividad-pr-ctica.onrender.com') 
         .then(response => response.json()) 
         .then(data => console.log("Datos de mi API pública:", data)) 
         .catch(error => console.error('Error al consumir mi API:', error));
@@ -54,4 +53,5 @@ function setBackgroundByTemperature(temp) {
 searchButton.addEventListener('click', () => {
     const city = cityInput.value.trim();
     if (city) getWeather(city);
+
 });
