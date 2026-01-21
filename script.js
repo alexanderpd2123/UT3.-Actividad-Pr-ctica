@@ -7,13 +7,15 @@ const weatherResult = document.getElementById('weather-result');
 const weatherContainer = document.querySelector('.weather-container'); 
 
 function consumirMiAPI() {
-    fetch(' https://ut3-actividad-pr-ctica.onrender.com') 
-        .then(response => response.json()) 
-        .then(data => console.log("Datos de mi API pública:", data)) 
-        .catch(error => console.error('Error al consumir mi API:', error));
+    fetch('https://ut3-actividad-pr-ctica.onrender.com/api/questions')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error(error));
 }
-consumirMiAPI();
 
+consumirMiAPI();
 
 function getWeather(city) {
     const url = `${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric&lang=es`;
@@ -35,10 +37,11 @@ function getWeather(city) {
 }
 
 function displayWeather(data) {
+    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     weatherResult.innerHTML = `
         <h2>${data.name}, ${data.sys.country}</h2>
         <div class="weather-details">
-            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="weather-icon">
+            <img src="${iconUrl}" class="weather-icon">
             <p class="temperature">${Math.round(data.main.temp)}°C</p>
         </div>
         <p class="description">Condición: ${data.weather[0].description}</p>
@@ -53,5 +56,4 @@ function setBackgroundByTemperature(temp) {
 searchButton.addEventListener('click', () => {
     const city = cityInput.value.trim();
     if (city) getWeather(city);
-
 });
